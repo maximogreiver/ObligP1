@@ -1,0 +1,235 @@
+<!--Realizado por Martin Stein(280739) y Maximo Greiver(290017)-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="JS/class.js"></script>
+    <script src="JS/funciones.js"></script>
+    <title>Trivia</title>
+</head>
+<body>
+
+    <header>
+        <nav> 
+            <img class="Imagen-Trivia" src="IMÁGENES/Trivia.jpg" alt="" id="idlogo">
+           
+            <ul id="idmenu">
+                <li class="limenu" id="MenuDG"><a href="#h1DescripcionGeneral">Información General</a></li>
+                <li class="limenu" id="MenuGestion"><a href="#h1Gestion">Administrar</a></li>
+                <li class="limenu" id="MenuJugar"><a href="#h1Jugar">¡Jugar!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="S-DescripcionGeneral">
+            
+            <h1 id="h1DescripcionGeneral">Descripción General</h1>  
+
+            
+            <h3>¿Qué encontrarás en este sitio?</h3>
+        
+            <p>En este sitio podrás crear temas, preguntas y jugar a nuestra versión del conocido juego de Trivia.</p><!--triva a Trivia-->
+            <p>Es una prueba de conocimientos generales con preguntas y respuestas.</p>
+            <p>Cada tema tiene un nombre y una descripción. Cada pregunta es de un tema, tiene un nivel (1-muy fácil, …, 5-muy difícil), un texto que la describe y te aparecerán varias respuestas, pero solo una es la correcta.</p>
+            <p>Si la respondes bien, sumas 10 puntos. Por cada error pierdes un punto, ¡pero puedes usar la ayuda!</p> <!-- ¡ faltaba en el pero -->
+            <p>El sitio fue desarrollado en el 1er. semestre 2024 - Programación 1 - Universidad ORT Uruguay por:</p>  <!--primer a 1er. --> <!--Programacion a Programacion 1-->
+    
+
+
+        <div class="Fotos">
+            <div class="Foto-Uno">
+                <img class="Imagen" src="IMÁGENES/Greiver.jpg" alt="">
+                <p>Maximo Greiver 290017</p>
+            </div>
+
+            <div class="Foto-Dos">
+                <img class="Imagen" src="IMÁGENES/Stein.jpg" alt="">
+                <p>Martin Stein 280739</p>
+            </div>
+        </div>
+
+    </section>
+
+    <br>
+
+    <section class="S-GTyP" >
+
+        <h1 id="h1Gestion">Gestión de Temas</h1>
+
+        <h3>Alta de temas</h3> 
+        
+        <form id="idFormAltaTemas" >
+            <div class="alinearInputs">
+                <label for="idNombre"  class="label-diseno">Nombre</label><!--aca cambie a label-->            
+                <input type="text" placeholder="" id="idNombre" class="input-diseno" required>
+            </div>
+
+            <div class="alinearInputs">
+                <label for="idDescripcion" class="label-diseno">Descripción</label>
+                <input type="text" placeholder="" id="idDescripcion" class="input-diseno" required>
+            </div>
+
+            <button id="idBotonAgregarTemas" >Agregar</button> 
+            <!--agregue value y type-->
+        </form>
+
+    </section>
+
+    <section class="S-GTyP">
+
+        <h3>Datos generales de temas</h3>
+            
+       
+        <p>Lista de temas (total de temas: 0)</p>
+        <ul id="idListaDeTemas">
+            <li>Sin datos</li>
+        </ul>
+        <p>Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): sin datos</p>            <p>Temas sin preguntas:</p>
+        <ul>
+            <li>Sin datos</li>
+        </ul>
+        <br>
+
+    </section>
+
+
+    <section class="S-GTyP">
+        
+        <h1>Gestión de Preguntas</h1>
+        
+        
+        <h3>Alta de preguntas</h3>
+       
+        
+        <form id="idFormAltaPregunta" > <!--SACAR ACTION Y METHOD-->
+            <div class="alinearInputs">
+                <label for="idSelectorTema" class="label-diseno">Tema</label>
+                <select id="idSelectorTema" class="input-diseno">
+                   
+                </select>
+            </div>
+
+            <div class="alinearInputs">
+                <label for="idNivel" class="label-diseno">Nivel</label>
+                <input type="number" id="idNivel" value="" min="1" max="5" required>
+            </div>
+            <br>
+            
+            <div class="alinearInputs">
+                <label for="idTextopregunta" class="label-diseno">Texto de la pregunta</label>
+                <input type="text" placeholder="" id="idTextopregunta" class="input-diseno" required>
+            </div>
+
+            <div class="alinearInputs">
+                <label for="idTextoRespuestaCorrecta" class="label-diseno">Respuesta Correcta</label>
+                <input type="text" placeholder="" id="idTextoRespuestaCorrecta" class="input-diseno" required>
+            </div>
+            
+            <div class="alinearInputs">
+                <label for="idTextoRespuestaIncorrecta" class="label-diseno">Respuesta Incorrecta</label>
+                <input type="text" placeholder="" id="idTextoRespuestaIncorrecta" class="input-diseno" required>
+            </div>
+
+            <button id="idBotonAgregarPregunta">Agregar</button>
+            
+        </form>
+     
+    </section>
+
+    <section class="S-GTyP">
+
+        <h3>Datos generales de preguntas</h3>
+
+
+        <p>Total de preguntas registradas: 0 preguntas</p>
+        <p>Máximo puntaje obtenido por un jugador: sin datos</p>
+      
+        <p>Preguntas registradas: <input name="Radio" type="radio" checked>Orden nombre tema creciente/nivel creciente <input name="Radio" type="radio">Orden nombre tema decreciente/nivel creciente</p>
+      
+
+
+
+        <div class="Tabla-Container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre del tema</th>
+                        <th>Nivel</th>
+                        <th>Texto de la pregunta</th>
+                        <th>Respuesta correcta</th>
+                        <th>Respuesta incorrecta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    
+    </section>
+
+    <br>
+
+    <section class="S-Jugar">
+
+        <h1 id="h1Jugar">¡A jugar!</h1>
+       
+
+        <h3>Configuración</h3> 
+       
+
+        <form id="idFormJugar">
+            <div class="alinearInputs">
+                <label for="idTemaJugar" class="label-diseno" >Tema a elegir</label>
+                <select id="idTemaJugar" class="input-diseno"> 
+                </select>
+            </div>
+
+            <div class="alinearInputs">
+                <label for="idNivelJugar" class="label-diseno"> Nivel de juego </label>
+                <input type="number" id="idNivelJugar" value="1" min="1" max="5"  required> 
+            </div>
+
+            <button id="idEmpazarAJugar">Jugar</button>
+        </form>
+
+      
+        
+        <h3>Juego</h3> 
+       
+        
+
+        <p>Puntaje acumulado en esta Partida: 0</p>
+        <p>La pregunta es...:</p> 
+       
+
+
+        <p id="idTexto-De-Pregunta">TEXTO DE LA PREGUNTA</p>
+      
+
+        
+        <div class="Juntos">
+            <button id="botonResp1">Respuesta 1</button>
+            <button id="botonResp2">Respuesta 2</button>
+            <button id="botonResp3">Respuesta 3</button>
+        </div>
+       
+        <div class="Botones-De-Funcion">
+            <button id="botonAyuda">Ayuda</button>
+            <button id="botonSiguiente">Siguiente Pregunta</button>
+            <button id="botonTerminar">Terminar</button>
+        </div>
+    </section>
+
+</body>
+</html>
